@@ -1,0 +1,156 @@
+<html>
+    <body>
+      
+      <div class="form-style-10">
+      <h1>ÉVALUEZ VOS RISQUES</h1>
+      <form #f="ngForm" (ngSubmit)="onSave(f.value)" novalidate>
+   
+          <div class="section"><span>1</span>Quel est votre Sexe ?</div>
+          <div class="inner-wrap">
+           <label class="radio-inline">
+             <input type="radio" value="1" name="sexe" [(ngModel)]="sexe" #se='ngModel' required > Homme
+            </label> <br>
+            <label class="radio-inline">
+             <input type="radio" value="0" name="sexe" [(ngModel)]="sexe" #se='ngModel' required> Femme
+            </label>
+           
+          </div>
+          
+         
+            <div class="section"><span>2</span>Quel est votre age ?</div>
+            <div class="inner-wrap">    
+              <input  type="number" (keypress)="numericOnly($event)" placeholder="age" name="age" [(ngModel)]="age" #ag='ngModel' required><br>
+              <small class="text-danger " [class.d-none]="ag.valid || ag.untouched">Ce champs est obligatoire</small>
+            </div>
+
+
+         
+            <div class="section"><span>3</span>Vous souffrez de quel type de poitrine ?</div>
+      
+            <div class="inner-wrap">    
+               <label class="radio-inline">
+                 <input type="radio" value="1" name="cp" [(ngModel)]="cp"> 1 : pour angine de poitrine typique
+               </label> 
+               <label class="radio-inline">
+                  <input type="radio" value="2" name="cp" [(ngModel)]="cp"> 2 : angine atypique
+               </label>
+               <label class="radio-inline">
+                  <input type="radio"  value="3" name="cp" [(ngModel)]="cp"> 3 : douleur non angorale 
+               </label>
+               <label class="radio-inline">
+                  <input type="radio"  value="4" name="cp" [(ngModel)]="cp"> 4 : asymptotique
+               </label>
+          </div>
+
+
+          <div class="section"><span>4</span>Quelle est votre tension artérielle en mmHg?</div>
+          <div class="inner-wrap">    
+            <input  type="number" (keypress)="numericOnly($event)" placeholder="Tension artérielle" name="trestbps" [(ngModel)]="trestbps" #trest="ngModel" required ><br>
+            <small class="text-danger " [class.d-none]="trest.valid || trest.untouched">Ce champs est obligatoire</small>
+          </div>
+
+
+          <div class="section"><span>5</span> Quel est votre taux de Cholesterol en mg/dl?</div>
+          <div class="inner-wrap">    
+            <input  type="number" (keypress)="numericOnly($event)" placeholder="Cholesterol" name="chol" [(ngModel)]="chol" #choles="ngModel" required><br>
+            <small class="text-danger " [class.d-none]="choles.valid || choles.untouched">Ce champs est obligatoire</small>
+          </div>
+
+
+          <div class="section"><span>6</span>Votre valeur de glycémie du sang a jeun ?</div>
+          <div class="inner-wrap">    
+               <label class="radio-inline">
+                 <input type="radio" value="1" name="fbs" [(ngModel)]="fbs"> 1 : si la glycémie a jeun > 120 mg/dl
+               </label> 
+               <label class="radio-inline">
+                  <input type="radio" value="2" name="fbs" [(ngModel)]="fbs"> 2 : Sinon
+               </label>
+          </div>
+
+          
+            <div class="section"><span>7</span>l'electrocardiagramme au repos ?</div>
+            <div class="inner-wrap">    
+               <label class="radio-inline">
+                 <input type="radio" value="0" name="restecg" [(ngModel)]="restecg"> 0 : normal
+               </label> 
+               <label class="radio-inline">
+                  <input type="radio" value="1" name="restecg" [(ngModel)]="restecg"> 1 : onde ST-T anormale
+               </label>
+               <label class="radio-inline">
+                  <input type="radio" value="2" name="restecg" [(ngModel)]="restecg"> 2 : hypertrophie ventriculaire gauche
+               </label>
+            </div>
+
+
+            <div class="section"><span>8</span> Votre nombre de battements max du coeur en 1 minute?</div>
+            <div class="inner-wrap">    
+              <input  type="number"  (keypress)="numericOnly($event)" placeholder="thalach" name="thalach" [(ngModel)]="thalach" #thala="ngModel" required><br>
+              <small class="text-danger " [class.d-none]="thala.valid || thala.untouched">Ce champs est obligatoire</small>
+            </div>
+
+            
+            <div class="section"><span>9</span>Est ce que vous sentez une douleur de poitrine lors d'un exercice phyqie ?</div>
+            <div class="inner-wrap">    
+               <label class="radio-inline">
+                 <input type="radio" value="1" name="exang" [(ngModel)]="exang"> 1 :  oui
+               </label> 
+               <label class="radio-inline">
+                  <input type="radio" value="2" name="exang" [(ngModel)]="exang"> 2 : Sinon
+               </label>
+            </div>
+
+
+            <div class="section"><span>10</span> La valeur de la depression du segment ST dans l'electrocardiagramme en mm : </div>
+            <div class="inner-wrap">    
+              <input  type="number" (keypress)="numericOnly($event)" placeholder="oldpeak" name="oldpeak" [(ngModel)]="oldpeak" #old="ngModel" required ><br>
+              <small class="text-danger " [class.d-none]="old.valid || old.untouched">Ce champs est obligatoire</small>
+            </div>
+
+          
+            <div class="section"><span>11</span>Quel est la pente du segment ST durant l'exercice physique ?</div>
+            <div class="inner-wrap">    
+               <label class="radio-inline">
+                 <input type="radio" value="0" name="slope" [(ngModel)]="slope"> 0 : ascendante
+               </label> 
+               <label class="radio-inline">
+                  <input type="radio" value="1" name="slope" [(ngModel)]="slope"> 1 : plat
+               </label>
+               <label class="radio-inline">
+                  <input type="radio" value="2" name="slope" [(ngModel)]="slope"> 2 : descendate
+               </label>
+             </div>
+
+
+            <div class="section"><span>12</span>Quel est le nombre de vaisseaux pricipaux colorés par fluoroscopie ?</div>
+            <div class="inner-wrap">  
+            <label class="radio-inline">
+               &nbsp; &nbsp;
+               <input type="radio" value="0" name="ca" [(ngModel)]="ca"> 0 &nbsp; &nbsp;
+               <input type="radio" value="1" name="ca" [(ngModel)]="ca"> 1 &nbsp; &nbsp;
+               <input type="radio" value="2" name="ca" [(ngModel)]="ca">  2 &nbsp; &nbsp;
+               <input type="radio" value="3" name="ca" [(ngModel)]="ca">  3
+           </label>
+           </div>
+
+
+         <div class="section"><span>13</span>Quel est votre status de thalassemia ?</div>
+           <div class="inner-wrap">    
+               <label class="radio-inline">
+                 <input type="radio" value="1" name="thal" [(ngModel)]="thal"> 1 : normal
+               </label> 
+               <label class="radio-inline">
+                  <input type="radio" value="2" name="thal" [(ngModel)]="thal"> 2 : defaut corrigé
+               </label>
+               <label class="radio-inline">
+                  <input type="radio" value="3" name="thal" [(ngModel)]="thal"> 3 : défaut réversible
+               </label>
+            </div>
+
+         <button [disabled]="f.invalid" type="submit" class="btn">Valider</button>
+ 
+      </form>
+      </div>
+      
+      </body>
+      </html>   
+
