@@ -148,6 +148,8 @@ h5{
 }
 
 nav{
+  z-index:999;
+  position: absolute;
   height: 80px;
   background-color:#F67678;
   position: fixed;
@@ -223,7 +225,7 @@ label #cancel{
     width: 100px;
   }
   */
-@media (max-width:1000px){
+@media (max-width:1060px){
   .logo {
     display: inline-block;
     font-size: 22px;

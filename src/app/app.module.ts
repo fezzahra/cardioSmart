@@ -12,6 +12,8 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { SymptomePageComponent } from './symptome-page/symptome-page.component';
 import { AproposPageComponent } from './apropos-page/apropos-page.component';
+import { PageRisqueComponent } from './page-risque/page-risque.component';
+
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { AproposPageComponent } from './apropos-page/apropos-page.component';
     AcceuilComponent,
     QuestionnaireComponent,
     SymptomePageComponent,
-    AproposPageComponent
+    AproposPageComponent,
+    PageRisqueComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { AproposPageComponent } from './apropos-page/apropos-page.component';
   
   ],
   providers: [],
-
+  exports:[
+    HeaderComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
