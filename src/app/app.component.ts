@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as tf from '@tensorflow/tfjs';
 
 
 @Component({
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'predictionHeartDisease';
+
+
+ 
+
+
 }
